@@ -80,7 +80,7 @@ DEFAULT_FROM_EMAIL = 'dimonsmile98@yandex.ru'
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
 EMAIL_HOST_USER = 'dimonsmile98'
-EMAIL_HOST_PASSWORD = 'klinproft61'
+EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_SSL = True
 
 #settings apscheduler
