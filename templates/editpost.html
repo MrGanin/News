@@ -1,0 +1,19 @@
+{% extends 'flatpages/default.html' %}
+
+{% block content %}
+<br>
+{% if request.path == objectpk%}
+<h1>Редактирование новости</h1>
+{% else %}
+<h1>Редактирование статьи</h1>
+{% endif %}
+<br>
+<form action="", method="post">
+
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <input type='submit', value="Save"/>
+</form>
+
+{% endblock content %}

@@ -1,0 +1,30 @@
+{% extends 'flatpages/default.html' %} 
+{% load Appfilters %}
+
+{% block content %}
+
+<h1>{{ post.title }}</h1><hr>
+
+<h5>Дата публикации - {{ post.date | date:"SHORT_DATE_FORMAT"}}</h5><hr>
+
+{{ post.text | censor }}
+<hr>
+<form action="" method="post">
+  {% csrf_token %}
+    <table align="center">
+        <tr>
+            <td>Категории:</td>
+            {% for cycle in post.category.all %}
+                <td>{{ cycle.title }}</td>
+                <td>
+                    {% if request.user not in cycle.subscribers.all %}
+                        <button><a href="{% url 'subscribe' cycle.pk  %}">Подписаться!</a></button>
+                    {% else %}
+                        <button><a href="{% url 'unsubscribe' cycle.pk  %}">Отписаться!</a></button>
+                    {% endif %}
+                </td>
+            {% endfor %}
+        </tr>
+    </table>
+ </form>
+{% endblock content %}

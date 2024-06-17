@@ -1,0 +1,1 @@
+redis_conf = 'redis://7Lm1rhvGoEQN29gAJFhApCggJDpfPKLl@redis-11910.c299.asia-northeast1-1.gce.redns.redis-cloud.com:11910'

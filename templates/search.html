@@ -1,0 +1,25 @@
+{% extends 'flatpages/default.html'%}
+
+{% block content %}
+<h1>Поиск новостей</h1>
+<form action="" method="get">
+   {{ filterset.form.as_p }}
+   <input type="submit" value="Найти"/>
+</form>
+{% if posts %}
+    <table align="center">
+        {% for news in posts %}
+        <tr >
+            <td>{{ news.title }} &emsp;</td>
+            <td>{{ news.date | date:"d.m.Y"}} &emsp;</td>
+            <td>{{ news.text | truncatechars:20 }} &emsp;</td>
+        </tr>
+
+
+
+        {% endfor %}
+    </table>
+{% else %}
+    <h2>Новостей нет!</h2>
+{% endif %}
+{% endblock content %}

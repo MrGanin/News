@@ -1,0 +1,16 @@
+{% extends 'flatpages/default.html' %}
+
+{% block content %}
+<h1>Профиль {{request.user.username}}</h1>
+
+{% if is_not_author %}
+<button> <a href="sign/upgrade/"> Хочу стать автором!</a> </button>
+
+
+{% endif %}
+<button> <a href={% url 'news_create' %}> Создать новость</a> </button>
+<button> <a href={% url 'articles_create' %}> Создать статью</a> </button>
+<br>
+<hr>
+<button> <a href="../../accounts/logout/"> Выйти из аккаунта</a> </button>
+{% endblock content %}

@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Публикации недели</title>
+</head>
+<body>
+{% load Appfilters %}
+
+    <h2>Доброго дня {{ user | create_name }}!</h2>
+    {% for post in posts %}
+
+        <ul>
+            <li><a href="{{ link }}{{ post.get_absolute_url }}">{{post.title}}</a></li>
+        </ul>
+
+    {% endfor %}
+</body>
+</html>
